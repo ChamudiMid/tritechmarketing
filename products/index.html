@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" type="image/png" href="../images/logo.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
   <title>Products | TRITECH Marketing</title>
   <meta name="keywords" content="TRITECH, Pumps, Pipes, Water Tanks, Engineering Products" />
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="../css/theme.css" />
   <style>
   :root {
     --bg: #f8fafc;
@@ -34,14 +34,20 @@
   h1,h2,h3,h4,h5,h6 { font-family: 'Outfit', sans-serif; color: var(--navy); line-height: 1.15; margin-bottom: 0; }
   img { max-width: 100%; }
 
-  /* Hide page hero — products page starts at category tabs */
-  .page-hero { display: none !important; }
-
   /* NAVBAR handled by theme.css */
 
-  /* SECTION */
-  .tt-sec { padding: 90px 0; }
-  .tt-sec:first-of-type { padding-top: 110px; }
+  /* PAGE HERO */
+  .page-hero { position: relative; padding: 140px 0 80px; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 55%, #e2e8f0 100%); overflow: hidden; }
+  .page-hero-deco { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 420px; opacity: 0.06; pointer-events: none; }
+  .page-hero-content { position: relative; z-index: 2; }
+  .pg-eyebrow { display: inline-flex; align-items: center; gap: 14px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--amber); margin-bottom: 18px; }
+  .pg-eyebrow::before { content: ''; display: block; width: 32px; height: 1.5px; background: var(--amber); }
+  .pg-title { font-size: clamp(2.6rem,5vw,4rem); font-weight: 800; color: var(--navy); margin-bottom: 20px; }
+  .breadcrumb-row { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-muted); font-family: 'Inter', sans-serif; }
+  .breadcrumb-row a { color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .breadcrumb-row a:hover { color: var(--amber); }
+  .breadcrumb-row span { color: var(--amber-border); }
+  .breadcrumb-row .current { color: var(--amber); }
 
   /* CATEGORY TABS */
   .cat-tabs { display: flex; gap: 0; border: 1px solid var(--border); background: var(--white); flex-wrap: wrap; margin-bottom: 70px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
@@ -51,6 +57,9 @@
   .cat-tab:hover, .cat-tab.active { color: var(--amber); background: var(--amber-pale); text-decoration: none; }
   .cat-tab:hover::after, .cat-tab.active::after { width: 100%; }
   .cat-tab i { display: block; font-size: 1.25rem; margin-bottom: 8px; color: inherit; }
+
+  /* SECTION */
+  .tt-sec { padding: 90px 0; }
 
   /* CATEGORY HEADER STRIP */
   .cat-header-strip { display: flex; align-items: center; gap: 20px; margin-bottom: 44px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
@@ -105,7 +114,24 @@
   .btn-amber { display: inline-flex; align-items: center; gap: 10px; background: var(--amber); color: #fff; border: none; padding: 14px 34px; font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 30px; transition: all 0.3s ease; }
   .btn-amber:hover { background: var(--amber-deep); color: #fff; text-decoration: none; box-shadow: 0 10px 28px rgba(217,119,6,0.25); transform: translateY(-2px); }
 
-  /* FOOTER handled by theme.css */
+  /* FOOTER */
+  .tt-foot { background: #ffffff; color: #475569; padding: 60px 0 20px; border-top: 1px solid #e2e8f0; position: relative; overflow: hidden; font-family: 'Inter', sans-serif; }
+  .tt-foot .flogo { height: 45px; display: block; margin-bottom: 18px; }
+  .tt-foot p.fdesc { font-size: 14px; line-height: 1.7; color: #64748b; max-width: 300px; margin: 0; }
+  .tt-foot h5 { font-family: 'Outfit', sans-serif; font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 22px; display: flex; align-items: center; gap: 10px; }
+  .tt-foot h5 .hico { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; background: var(--amber-pale); border-radius: 8px; }
+  .tt-foot h5 .hico i { color: var(--amber); font-size: 12px; }
+  .flink { display: flex; align-items: center; gap: 8px; color: #475569; text-decoration: none; font-size: 14px; font-weight: 500; margin-bottom: 11px; transition: all 0.3s; }
+  .flink::before { content: ''; display: block; width: 5px; height: 5px; background: var(--amber); border-radius: 50%; opacity: 0.5; flex-shrink: 0; }
+  .flink:hover { color: var(--amber); text-decoration: none; transform: translateX(4px); }
+  .flink:hover::before { opacity: 1; }
+  .fcontact { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; color: #475569; font-size: 13.5px; text-decoration: none; transition: color 0.3s; }
+  .fcontact:hover { color: var(--amber); text-decoration: none; }
+  .fcontact .ico { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; background: var(--amber-pale); border: 1px solid var(--amber-border); border-radius: 8px; color: var(--amber); font-size: 12px; flex-shrink: 0; margin-top: 2px; }
+  .fsocial { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; background: #f1f5f9; color: #475569; border-radius: 10px; font-size: 14px; text-decoration: none; transition: all 0.3s; margin-right: 8px; }
+  .fsocial:hover { background: var(--amber); color: #fff; text-decoration: none; }
+  .fbot { border-top: 1px solid #e2e8f0; padding-top: 22px; margin-top: 40px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+  .fbot p { font-size: 12px; color: #cbd5e1; margin: 0; letter-spacing: 0.5px; }
   </style>
 </head>
 <body>
@@ -114,12 +140,12 @@
 <nav class="tt-nav" id="mainNav">
   <div class="container">
     <div class="nav-inner">
-      <a href="index.html" class="logo"><img src="images/logo2.png" alt="Tritech Marketing"></a>
+      <a href="../" class="logo"><img src="../images/logo2.png" alt="Tritech Marketing"></a>
       <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
-        <a href="about/">About Us</a>
-        <a href="products/" class="active">Products</a>
-        <a href="contact/">Contact Us</a>
+        <a href="../">Home</a>
+        <a href="../about/">About Us</a>
+        <a href="../products/" class="active">Products</a>
+        <a href="../contact/">Contact Us</a>
       </div>
       <button class="mob-btn" id="mobBtn"><i class="fas fa-bars"></i></button>
     </div>
@@ -149,51 +175,51 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="60">
         <div class="prod-card h-100">
-          <div class="prod-img-box" style="height:230px;"><img src="images/6.png" alt="SPERONI Pump"></div>
+          <div class="prod-img-box" style="height:230px;"><img src="../images/6.png" alt="SPERONI Pump"></div>
           <div class="prod-body">
             <h4>SPERONI Pump</h4>
             <p>High-quality Italian water pumps offering excellent energy efficiency and unmatched operational reliability for every application scale.</p>
-            <a href="SPERONI-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
+            <a href="../SPERONI-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="140">
         <div class="prod-card h-100">
-          <div class="prod-img-box" style="height:230px;"><img src="images/3.jpg" alt="Heng Long Pump"></div>
+          <div class="prod-img-box" style="height:230px;"><img src="../images/3.jpg" alt="Heng Long Pump"></div>
           <div class="prod-body">
             <h4>Heng Long Pump</h4>
             <p>Reliable submersible pumps engineered to handle relentless industrial liquid transportation with consistent power output.</p>
-            <a href="Heng-Long-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
+            <a href="../Heng-Long-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="220">
         <div class="prod-card h-100">
-          <div class="prod-img-box" style="height:230px;"><img src="images/4.jpg" alt="EVERGUSH Pump"></div>
+          <div class="prod-img-box" style="height:230px;"><img src="../images/4.jpg" alt="EVERGUSH Pump"></div>
           <div class="prod-body">
             <h4>EVERGUSH Pump</h4>
             <p>High-performance engineering designed for continuous uninterrupted flow in every environmental condition.</p>
-            <a href="EVERGUSH-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
+            <a href="../EVERGUSH-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="300">
         <div class="prod-card h-100">
-          <div class="prod-img-box" style="height:230px;"><img src="images/5.png" alt="TSURUMI Pump"></div>
+          <div class="prod-img-box" style="height:230px;"><img src="../images/5.png" alt="TSURUMI Pump"></div>
           <div class="prod-body">
             <h4>TSURUMI Pump</h4>
             <p>Japanese-engineered durability and precision that thrives under maximum pressure and sustained heavy load conditions.</p>
-            <a href="TSURUMI-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
+            <a href="../TSURUMI-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="380">
         <div class="prod-card h-100">
-          <div class="prod-img-box" style="height:230px;"><img src="images/1.png" alt="Calpeda Pump"></div>
+          <div class="prod-img-box" style="height:230px;"><img src="../images/1.png" alt="Calpeda Pump"></div>
           <div class="prod-body">
             <h4>Calpeda Pump</h4>
             <p>Next-generation Italian reliability pushing innovative hydro-engineering design boundaries for modern infrastructure.</p>
-            <a href="Calpeda-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
+            <a href="../Calpeda-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -212,24 +238,26 @@
     </div>
     <div class="pipe-card" data-aos="fade-up" data-aos-delay="60">
       <div class="pipe-img">
-        <img src="images/unified_ppr_pipes.png" alt="PP-R Pipes" style="max-height:120px;transform:scale(1.3);">
-        <img src="images/2.jpg" alt="Aquatherm" style="max-height:44px;object-fit:contain;">
+        <img src="../images/unified_ppr_pipes.png" alt="PP-R Pipes" style="max-height:120px;transform:scale(1.3);">
+        <img src="../images/2.jpg" alt="Aquatherm" style="max-height:44px;object-fit:contain;">
       </div>
       <div class="pipe-body">
         <h3>PP-R Pipes — Aquatherm</h3>
         <p>Aquatherm PP-R pipes represent the pinnacle of polypropylene engineering — a premium-grade piping system trusted globally for hot and cold water, heating, and industrial fluid distribution. Fusion-welded joints eliminate corrosion risks and provide a leak-free lifetime of performance with minimal maintenance.</p>
-        <a href="aquatherm-details.html" class="lux-btn">Full Specifications <i class="fas fa-arrow-right"></i></a>
+
+        <a href="../aquatherm-details.html" class="lux-btn">Full Specifications <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
     <div class="pipe-card" data-aos="fade-up" data-aos-delay="120">
       <div class="pipe-img">
-        <img src="images/single_hdpe_pipe.png" alt="HDPE Pipe" style="max-height:100px;transform:scale(1.6);">
-        <img src="images/puhei.jpeg" alt="Puhui" style="max-height:42px;object-fit:contain;">
+        <img src="../images/single_hdpe_pipe.png" alt="HDPE Pipe" style="max-height:100px;transform:scale(1.6);">
+        <img src="../images/puhei.jpeg" alt="Puhui" style="max-height:42px;object-fit:contain;">
       </div>
       <div class="pipe-body">
         <h3>HDPE Pipes — Puhui</h3>
         <p>High-Density Polyethylene pipes by Puhui deliver outstanding flexibility, chemical resistance and impact strength for water supply, sewerage, gas distribution, and industrial networks. HDPE's electrofusion and butt-fusion welding ensure fully monolithic joints for demanding buried and above-ground conditions.</p>
-        <a href="HDPE-details.html" class="lux-btn">Full Specifications <i class="fas fa-arrow-right"></i></a>
+
+        <a href="../HDPE-details.html" class="lux-btn">Full Specifications <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
 
@@ -247,11 +275,11 @@
     <div class="row justify-content-center">
       <div class="col-lg-5 col-md-7 mb-4" data-aos="fade-up" data-aos-delay="60">
         <div class="prod-card h-100">
-          <div class="prod-img-box" style="height:260px;"><img src="images/12.png" alt="GRP Water Tank" style="max-height:180px;"></div>
+          <div class="prod-img-box" style="height:260px;"><img src="../images/12.png" alt="GRP Water Tank" style="max-height:180px;"></div>
           <div class="prod-body">
             <h4>GRP Water Tanks</h4>
             <p>Glass Fibre Reinforced Plastic (GRP) modular sectional tanks providing absolute corrosion resistance, structural integrity, and superior hygiene for municipal, industrial, and commercial water storage. Available in any capacity from 1,000L to multi-million litre configurations.</p>
-            <a href="GRP-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
+            <a href="../GRP-details.html" class="lux-btn">Discover Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -266,7 +294,7 @@
     <span style="display:block;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#d97706;margin-bottom:18px;">Get in Touch</span>
     <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:#fff;margin-bottom:16px;font-family:'Outfit',sans-serif;">Need a Custom Engineering Solution?</h2>
     <p style="color:rgba(255,255,255,0.6);max-width:500px;margin:0 auto 36px;font-size:1rem;">Our experienced team is ready to specify and deliver the perfect system for your project requirements.</p>
-    <a href="contact/" class="btn-amber">Request a Consultation <i class="fas fa-arrow-right"></i></a>
+    <a href="../contact/" class="btn-amber">Request a Consultation <i class="fas fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -277,8 +305,8 @@
   <div class="container" style="position:relative;z-index:2;">
     <div class="row mb-4">
       <div class="col-lg-4 mb-4 mb-lg-0">
-        <a href="index.html" style="display:inline-block;margin-bottom:18px;text-decoration:none;">
-          <img src="images/logo2.png" alt="TRITECH" class="flogo">
+        <a href="../" style="display:inline-block;margin-bottom:18px;text-decoration:none;">
+          <img src="../images/logo2.png" alt="TRITECH" class="flogo">
         </a>
         <p class="fdesc">One of the leading Engineering service providers in Sri Lanka since 1999, specializing in Civil, Mechanical, Plumbing &amp; Environmental solutions.</p>
         <div style="margin-top:22px;">
@@ -291,11 +319,11 @@
       <div class="col-lg-4 mb-4 mb-lg-0">
         <h5><span class="hico"><i class="fas fa-arrow-right"></i></span> Quick Links</h5>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;">
-          <a href="index.html" class="flink">Home</a>
-          <a href="about/" class="flink">About Us</a>
-          <a href="products/" class="flink">Products</a>
-          <a href="contact/" class="flink">Contact Us</a>
-          <a href="projects/" class="flink">Our Projects</a>
+          <a href="../" class="flink">Home</a>
+          <a href="../about/" class="flink">About Us</a>
+          <a href="../products/" class="flink">Products</a>
+          <a href="../contact/" class="flink">Contact Us</a>
+          <a href="../projects/" class="flink">Our Projects</a>
         </div>
       </div>
       <div class="col-lg-4">
@@ -336,38 +364,42 @@
       this.classList.add('active');
     });
   });
-  // Mobile menu toggle
-  const mobBtn = document.getElementById('mobBtn');
-  const navLinks = document.getElementById('navLinks');
-  mobBtn.addEventListener('click', function() {
-    const isOpen = navLinks.classList.toggle('mob-open');
-    mobBtn.setAttribute('aria-expanded', isOpen);
-    mobBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
-  });
-  document.querySelectorAll('#navLinks a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      navLinks.classList.remove('mob-open');
-      mobBtn.setAttribute('aria-expanded', 'false');
-      mobBtn.querySelector('i').className = 'fas fa-bars';
-    });
-  });
-  document.addEventListener('click', function(e) {
-    if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
-      navLinks.classList.remove('mob-open');
-      mobBtn.setAttribute('aria-expanded', 'false');
-      mobBtn.querySelector('i').className = 'fas fa-bars';
-    }
-  });
-  window.addEventListener('scroll', function() {
-    const nav = document.getElementById('mainNav');
-    if (window.scrollY > 20) {
-      nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
-      nav.style.background = 'rgba(255,255,255,0.97)';
-    } else {
-      nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)';
-      nav.style.background = 'rgba(255,255,255,0.92)';
-    }
-  });
 </script>
+
+  <script>
+    // Mobile menu toggle
+    const mobBtn = document.getElementById('mobBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobBtn.addEventListener('click', function() {
+      const isOpen = navLinks.classList.toggle('mob-open');
+      mobBtn.setAttribute('aria-expanded', isOpen);
+      mobBtn.querySelector('i').className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+    });
+    document.querySelectorAll('#navLinks a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobBtn.querySelector('i').className = 'fas fa-bars';
+      });
+    });
+    document.addEventListener('click', function(e) {
+      if (!mobBtn.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('mob-open');
+        mobBtn.setAttribute('aria-expanded', 'false');
+        mobBtn.querySelector('i').className = 'fas fa-bars';
+      }
+    });
+    // Scroll shadow on navbar
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('mainNav');
+      if (window.scrollY > 20) {
+        nav.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+        nav.style.background = 'rgba(255,255,255,0.97)';
+      } else {
+        nav.style.boxShadow = '0 4px 20px rgba(0,0,0,0.04)';
+        nav.style.background = 'rgba(255,255,255,0.92)';
+      }
+    });
+  </script>
 </body>
 </html>
